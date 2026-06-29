@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tbstax"
+version = "0.1.0"
+description = "Tight-binding and self-consistent electrostatics tools for multilayer graphene stacks."
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = [
+  "graphene",
+  "tight-binding",
+  "electrostatics",
+  "band-structure",
+  "condensed-matter",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.6",
+]
+release = [
+  "build>=1.2",
+  "twine>=5",
+]
+
+[tool.setuptools]
+py-modules = [
+  "constants",
+  "ewald_summation_h",
+  "k_points",
+  "self_consistency_h",
+  "tight_binding_h",
+  "validation",
+]
+include-package-data = false
+
+[tool.ruff]
+line-length = 88
